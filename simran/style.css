@@ -1,0 +1,19 @@
+.boxed{
+    margin:50px;    
+}
+
+.col-sm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    border: 1px solid black;
+}
+
+.circle{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}

@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+
+<head>
+
+<body>
+  <table style="margin-top: 50px; margin-left:auto; margin-right:auto; border-spacing:20px;">
+    <form action="#" name="forms" onsubmit=" return validation()" class="bg-light">
+
+
+      <tr>
+        <td style="background-color: rgb(215, 247, 156);"><label for="username"> Username </label>
+        <td> <input type="text" name="username" class="form-control" id="username"></td>
+        <td><span id="usernameError" style="color:red"> </span></td>
+      </tr>
+
+      <tr>
+        <td><label> Gender</label></td>
+        <td> <input type="radio" name="genders" class="form-control" value="male">
+          <label for="male">male</label>
+          <input type="radio" name="genders" class="form-control" value="female">
+          <label for="female">female</label>
+        </td>
+        <td> <span id="genderError" style="color: red;"> </span></td>
+      </tr>
+
+      <tr>
+        <td> <label class="font-weight-regular"> Mobile Number </label></td>
+        <td><input type="text" name="mobile" class="form-control" id="mobileNumber"></td>
+        <td> <span id="mobileError" style="color:red" class="text-danger font-weight-regular"> </span></td>
+      </tr>
+      
+      <tr>
+        <td>
+          <label class="font-weight-regular">Preference</label>
+        </td>
+        <td> <input type="checkbox" name="preference" value="red" class="form-control" id="chk"
+            onclick="checkboxvalidation()">Red
+          <input type="checkbox" name="preference" value="green" class="form-control" id="chk"
+            onclick="checkboxvalidation()"> Green
+          <input type="checkbox" name="preference" value="blue" class="form-control" id="chk"
+            onclick="checkboxvalidation()">Blue
+        </td>
+        <td> <span id="checkboxError" style="color:red" class="text-danger font-weight-regular"> </span></td>
+        </td>
+      </tr>
+
+      <tr>
+        <td> <label for="add" class="font-weight-regular"> Address </label></td>
+        <td> <textarea type="text" name="Address" class="form-control" id="add"></textarea></td>
+        <td> <span id="addressError" style="color: red;" class="text-danger font-weight-regular"> </span></td>
+      </tr>
+      </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label class="font-weight-regular"> zipcode </label>
+        </td>
+        <td> <input type="text" name="mobile" class="form-control" id="zipCode"></td>
+        <td><span id="zipcodeError" style="color:red" class="text-danger font-weight-regular"> </span></td>
+      </tr>
+      <tr>
+        <td>
+          <label class="font-weight-regular">country</label>
+        </td>
+        <td> <select name="country" id="country" required>
+            <option value="country" selected disabled hidden>Select Country</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <span id="countryError" style="color:red" class="text-danger font-weight-regular"> </span>
+          </select></td>
+      </tr>
+
+      <tr>
+        <td> <label class="font-weight-regular"> Email </label></td>
+        <td> <input type="text" name="email" class="form-control" id="emails"></td>
+        <td> <span id="emailError" style="color:red" class="text-danger font-weight-regular"> </span></td>
+      </tr>
+      <td><input type="submit" name="submit" value="Submit" id="qs" onclick="storeData()" class="btn btn-primary"></td>
+      <td> <input type="reset" name="reset" value="Reset" class="btn btn-secondary"></td>
+  </table>
+  </form>
+
+  <script type="text/javascript">
+
+    var username=document.getElementById("username").value;
+    var gender=document.querySelector('input[name="genders"]:checked').value;
+    var mobileNumber=document.getElementById("mobileNumber").value;
+    var preference=document.querySelector('input[name="preference"]:checked').value;
+
+    function checkboxvalidation() {
+      var a = document.getElementsByName("preference");
+      var newvar = 0;
+      for (count = 0; count < a.length; count++) {
+        if (a[count].checked == true) {
+          newvar = newvar + 1;
+        }
+      }
+      if (newvar > 1) {
+        document.getElementById('checkboxError').innerHTML = "Please select Preference";
+        return false;
+      }
+
+      if (newvar <= 1) {
+        document.getElementById('checkboxError').innerHTML = "";
+        return false;
+      }
+    }
+
+    function radioValidation(){
+      var radio=document.querySelector('input[name="genders"]:checked').value;
+      if(radio=""){
+        document.getElementById("genderError").innerHTML="Please Select Gender";
+      }else{
+        document.getElementById("genderError").innerHTML=" ";
+      }
+    }
+
+    function validation() {
+      var user = document.getElementById("username").value;
+      var mobileNumber = document.getElementById("mobileNumber").value;
+      var color = document.getElementById("chk").value;
+      var Add_ress = document.getElementById("add").value;
+      var zip_code = document.getElementById("ZipCode").value;
+      var emails = document.getElementById("emails").value;
+
+      if (user == "") {
+        document.getElementById("usernameError").innerHTML = " ** fill the username field";
+        return false;
+      }
+      if (mobileNumber == "") {
+        document.getElementById("mobileError").innerHTML =
+          " *fill the mobile NUmber field";
+        return false;
+      }
+      if (!isNaN(user)) {
+        document.getElementById("usernameError").innerHTML = "  only characters are allowed";
+        return false;
+      }
+
+      // var c=document.forms.gender;
+      //for(var i=0;i<c.length;i++)
+      //{
+      //if(c[i].checked==true)
+      //return true;
+
+      //document.getElementById("genderError").innerHTML
+      //= "Select at least One"
+      //}
+
+
+      if (isNaN(mobileNumber)) {
+        document.getElementById("mobileError").innerHTML =
+          " only numbers are allowed";
+        return false;
+      }
+      else if (mobileNumber.length != 10) {
+        document.getElementById("mobileError").innerHTML =
+          " Mobile Number must be 10 digits only";
+        return false;
+      }
+      else if (color == "") {
+        document.getElementById("checkboxError").innerHTML = "please select at least one"
+        return false;
+      }
+      else if (Add_ress == "") {
+        document.getElementById("addressError").innerHTML =
+          " Address Cannot be empty";
+        return false;
+      }
+      else if (Add_ress.length > 10) {
+        document.getElementById("addressError").innerHTML =
+          " only 40 characters are allowed";
+        return false;
+      }
+
+      else if (zip_code == "") {
+        document.getElementById("zipcodeError").innerHTML =
+          " Please fill the Zip_Code field";
+        return false;
+      }
+      else if (isNaN(zip_code)) {
+        document.getElementById("zipcodeError").innerHTML =
+          "  only numbers are allowed";
+        return false;
+      }
+      else if (zip_code.length != 6) {
+        document.getElementById("zipcodeError").innerHTML =
+          " Zip_code must be 6 digits only";
+        return false;
+      }
+
+      else if (emails == "") {
+        document.getElementById("emailError").innerHTML =
+          "Please fill the email id field";
+        return false;
+      }
+      else if (emails.indexOf("@") <= 0) {
+        document.getElementById("emailError").innerHTML = "Email must contain @";
+        return false;
+      }
+
+      else if (emails.charAt(emails.length - 4) != "." &&
+        emails.charAt(emails.length - 3) != ".") {
+        document.getElementById("emailError").innerHTML = "Invalid Email";
+        return false;
+      }
+    }
+
+
+    function storeData() {
+
+      var fname = document.getElementById("username").value;
+      var ggender = document.querySelector('input[name="genders"]:checked').value;
+      var nno = document.getElementById("MobileNumber").value;
+      var ppreference = document.querySelector('input[name="preference"]:checked').value;
+      var aadd = document.getElementById("Add").value;
+      var zzip = document.getElementById("ZipCode").value;
+      var ccountry = document.getElementById("country").value;
+      var eemail = document.getElementById("emails").value;
+
+      let formData = {
+        user: fname,
+        genders: ggender,
+        mobileNumber: nno,
+        preference:ppreference,
+        Address: aadd,
+        ZipCode: zzip,
+        country: ccountry,
+        emails: eemail
+      }
+
+      localStorage.setItem('formData', JSON.stringify(formData));
+      console.log(localStorage.getItem('formData'));
+    }
+
+  </script>
+</body>
+
+</html>

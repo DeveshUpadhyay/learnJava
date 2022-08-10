@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+
+<body>
+    <table style="margin-top: 50px; margin-left:auto; margin-right:auto; border-spacing:20px;">
+        <form name="forms" id="my">
+
+
+            <tr style="margin-left: 40px;">
+                <td><label for="user"> Username </label>
+                <td> <input type="text" name="user" class="form-control" id="user"></td>
+                <td><span id="username" style="color:red"> </span></td>
+            </tr>
+            <tr>
+                <td><label> Gender</label></td>
+                <td> <input type="radio" name="gender" class="form-control" id="male" value="male">
+                    <label for="male">male</label>
+                    <input type="radio" name="gender" class="form-control" id="female" value="female">
+                    <label for="female">female</label>
+                    <td><span id="radio" style="color:red"> </span></td>
+                </td>
+                <td> <span id="gen" style="color: red;"> </span></td>
+            </tr>
+
+            <tr>
+                <td> <label class="font-weight-regular"> Mobile Number </label></td>
+                <td><input type="text" name="mobile" class="form-control" id="mobileNumber"></td>
+                <td> <span id="mobileno" style="color:red" class="text-danger font-weight-regular"> </span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-weight-regular">Preference</label>
+                </td>
+                <td> <input type="checkbox" name="preference" value="Red" class="form-control" id="Red"><label>Red</label>
+                    <input type="checkbox" name="preference" value="Green" class="form-control" id="Green"> Green
+                    <input type="checkbox" name="preference" value="Blue" class="form-control" id="Blue">Blue
+                    <td><span id="check" style="color:red"> </span></td>
+                </td>
+                <td> <span id="prefer" style="color:red" class="text-danger font-weight-regular"> </span></td>
+                </td>
+            </tr>
+
+            <tr>
+                <td> <label for="name" class="font-weight-regular"> Address </label></td>
+                <td> <textarea type="text" name="Address" class="form-control" id="add"></textarea></td>
+                <td> <span id="address" style="color: red;" class="text-danger font-weight-regular"> </span></td>
+            </tr>
+            </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="font-weight-regular"> zipcode </label>
+                </td>
+                <td> <input type="text" name="mobile" class="form-control" id="ZipCode"></td>
+                <td><span id="zip" style="color:red" class="text-danger font-weight-regular"> </span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-weight-regular">country</label>
+                </td>
+                <td> <select name="country" id="country" required>
+                        <option value="country" selected disabled hidden>Select Country</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <span id="Country" style="color:red" class="text-danger font-weight-regular"> </span>
+                    </select></td>
+            </tr>
+
+            <tr>
+                <td> <label class="font-weight-regular"> Email </label></td>
+                <td> <input type="text" name="email" class="form-control" id="emails"></td>
+                <td> <span id="emailids" style="color:red" class="text-danger font-weight-regular"> </span></td>
+            </tr>
+            <tr>
+                <td><button id="sumbit" >Sumbit</button></td>
+                <td> <input type="reset" name="reset" value="Reset" onclick="resetting()" class="btn btn-secondary"></td>
+                <td> <button id="retrive" onclick="retriveData()" class="btn btn-secondary">Retrive</button></td>
+            </tr>
+    </table>
+    </form>
+
+
+</body>
+<script src="dummy.js">
+
+</script>
+</html>
