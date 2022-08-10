@@ -1,8 +1,2 @@
+This is just a random repository which is created to practice git. So if you dont want to waste your time then "let it pass" or just skip it
 
-
-
-
-
-This is a dummy repository made to track my daily progress while learning java and ds. Totally dump files so skip if you don't wanna waste your time.
-
-Validating git merge is available.
