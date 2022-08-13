@@ -1,18 +1,21 @@
 <!doctype html>
 <html>
- <head>
-   <style>
-      label{
-         display: inline-block;
-      }
-      div {
-        margin-bottom: 10px;
-        align-items: center;
-        margin-left:auto;
-         margin-right: auto;
-      }
-     
-   /*  .div {
+
+<head>
+    <link rel="script" href="simran.js">
+    <style>
+        label {
+            display: inline-block;
+        }
+
+        div {
+            margin-bottom: 10px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /*  .div {
     display: block;
 }
       .container{
@@ -34,54 +37,92 @@
          margin-bottom: 10px;
          margin-right: 10px;
          margin-left: 10px;*/
-     
-   </style>
-       
+    </style>
+    <link rel="stylesheet" href="simran.css">
+    <script src="simran.js"></script>
+
 <body>
-   <form class="form">
-      <div class="container">
-       
-        <div class="form-control">
-                <label for="user"> Username </label>
-                 <input type="text" name="user" id="user" >
-            <span id="username" > </span></div>
-            </div>
-               <div class="form-control">
-                <label> Gender</label>
-                 <input type="radio" name="gender" value="male"  id="male" value="male" >
-                <label for="male">male</label>
-                    <input type="radio" name="gender"  id="female" value="female">
-                    <label for="female">female</label>
-                    <span id="radio" style="color:red"> </span>
-                    <span id="gen" style="color: red;"> </span></div>
-               
-            <div class="form-control">  
-                <label > Mobile Number </label>
-                <input type="text" name="mobile"  id="mobileNumber">
-                 <span id="mobileno" style="color:red" > </span></div>
-             
-              <div class="form-control">
-                  <label >Preference</label>
-                 <input type="checkbox" name="preference" value="Red"  id="Red" ><label>Red</label>
-                    <input type="checkbox" name="preference" value="Green" id="Green"> Green
-                    <input type="checkbox" name="preference" value="Blue"  id="Blue">Blue
-             <span id="check" style="color:red"> </span>
-            <span id="prefer" style="color:red" > </span></div>
-           
-           
-        <div class="form-control">
-             <label for="name" class="font-weight-regular" > Address </label>
-            <textarea type="text" name="Address"  id="add" ></textarea>
-            <span id="address"  > </span></div>
-         
+    <div class="container">
+
+        <form class="form">
+
             <div class="form-control">
-               <label > zipcode </label>
-               <input type="text" name="mobile"  id="ZipCode" >
-                <span id="zip" style="color:red" > </span></div>
-         
-                <div class="form-control">  
-                   <label >country</label>
-                <select name="country" id="c_ountry"   required>
+                <div class="formContent">
+                    <label for="user"> Username </label>
+                    <input type="text" name="user" id="user">
+                </div>
+                <div class="error">
+                    <p id="username"> </p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label> Gender</label>
+                    
+                    <input type="radio" name="gender" value="male" id="male" value="male">
+                    <label class="notFar" for="male">Male</label>
+                    
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label class="notFar" for="female">Female</label>
+                </div>
+
+                <div class="error">
+                    <p id="radio" style="color:red"> </p>
+                    <p id="gen" style="color: red;"> </p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label> Mobile Number </label>
+                    <input type="text" name="mobile" id="mobileNumber">
+                </div>
+                <div class="error">
+                    <p id="mobileno" style="color:red"> </p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label>Preference</label>
+    
+                    <input type="checkbox" name="preference" value="Red" id="Red"><label class="notFar" for="Red">Red</label>
+                    <input type="checkbox" name="preference" value="Green" id="Green"> <label class="notFar" for="Green">Green</label>
+                    <input type="checkbox" name="preference" value="Blue" id="Blue"><label class="notFar" for="Blue">Blue</label>
+                </div>
+
+                <div class="error">
+                    <p id="check" style="color:red"> </p>
+                    <p id="prefer" style="color:red"> </p>
+                </div>
+            </div>
+
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label for="name" class="font-weight-regular"> Address </label>
+                    <textarea type="text" name="Address" id="add"></textarea>
+                </div>
+                <div class="error">
+                    <p id="address"> </p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label> Zipcode </label>
+                    <input type="text" name="mobile" id="ZipCode">
+                </div>
+                <div class="error">
+                    <p id="zip" style="color:red"> </p>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label>Country</label>
+                    <select name="country" id="c_ountry" required>
                         <option value="country" id="selection" selected disabled hidden>Select Country</option>
                         <option value="France">France</option>
                         <option value="Canada">Canada</option>
@@ -91,261 +132,28 @@
                         <option value="Iran">Iran</option>
                         <option value="Italy">Italy</option>
                         <option value="Albania">Albania</option>
-                        <span id="Country" style="color:red" > </span>
-                    </select></div>
-           
-                    <div class="form-control">
-                       <label > Email </label>
-                 <input type="text" name="email"  id="emails" >
-                 <span id="emailids"  > </span></div>
-             
-                   <button  id="sumbit" >submit</button>
-           <input type="reset" id="reset" name="reset" value="Reset" onclick="resetting()" class="btn btn-secondary" >
-           <button type="button" id="retrieve"  onclick= "retrieveData()">Retrieve</button>
-        </div>
-        <form class="form">
+                        <p id="Country" style="color:red"> </p>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-control">
+                <div class="formContent">
+                    <label> Email </label>
+                    <input type="text" name="email" id="emails">
+                </div>
+                <div class="error">
+                    <p id="emailids"> </p>
+                </div>
+            </div>
+
+            <div class="controllers">
+                <button id="sumbit" value="Submit">Submit</button>
+                <input type="reset" id="reset" name="reset" value="Reset" onclick="resetting()" class="btn btn-secondary">
+                <button type="button" id="retrieve" onclick="retrieveData()">Retrieve</button>
+            </div>
+        </form>
+    </div>
 </body>
-<script src="form.js">
-   var x = document.getElementById("sumbit")
-var userName= document.getElementById("username");
-var mobileNo=document.getElementById("mobileno");
-var addressUser= document.getElementById("address");
-var emailId= document.getElementById("emailids");
-var genderCheck=document.getElementById("radio");
-var preferanceCheck= document.getElementById("check");
-var zipCodeCheck= document.getElementById("zip");
 
-
-
-
-function resetting() {
-        userName.innerHTML = "";
-        mobileNo.innerHTML ="";
-        addressUser.innerHTML ="";
-        emailId.innerHTML ="";
-        genderCheck.innerHTML = "";
-        zipCodeCheck.innerHTML ="";
-        preferanceCheck.innerHTML =""
-}
-
-function storeData() {
-
-    var fname = document.getElementById("user").value;
-    fname=fname.trim()
-    var ggender = document.querySelector('input[name="gender"]:checked').value;
-    var nno = document.getElementById("mobileNumber").value;
-    nno=nno.trim()
-    var ppref = document.querySelector('input[name="preference"]:checked').value;
-    var aadd = document.getElementById("add").value;
-    aadd=aadd.trim()
-    var zzip = document.getElementById("ZipCode").value;
-    zzip=zzip.trim()
-    var ccountry = document.getElementById("c_ountry").value;
-    var eemail = document.getElementById("emails").value;
-    eemail=eemail.trim()
-    //var pred = document.getElementById("Red").checked
-    //var pgreen = document.getElementById("Green").checked
-     // var pblue = document.getElementById("Blue").checked
-
-   
-
-    let formData = {
-        name: fname,
-        gender: ggender,
-        phone_no: nno,
-        preferance: ppref,
-      //  preferanceRed: pred,
-       // preferanceGreen: pgreen,
-       // preferanceBlue: pblue,
-        address: aadd,
-        zipcode: zzip,
-        country: ccountry,
-        email: eemail
-    }
-
-    localStorage.setItem('formData', JSON.stringify(formData));
-    console.log(localStorage.getItem('formData'));
-}
- function retrieveData(){
-
-var n=localStorage.getItem('formData');
-var v=JSON.parse(n);
-if(n!==null){
-    var v=JSON.parse(n);
-    document.getElementById("user").value=v["name"];
- 
-    document.getElementById("mobileNumber").value=v["phone_no"];
-       document.getElementById("add").value=v["address"];
-     document.getElementById("ZipCode").value=v["zipcode"];
-      document.getElementById("c_ountry").value=v["country"];
-      document.getElementById("emails").value=v["email"];
-      if ( document.getElementById("male").value==v["gender"]) {
-        document.getElementById("male").checked=true;
-   
-    }else if  ( document.getElementById("female").value==v["gender"]) {
-        document.getElementById("female").checked=true;
-         
-    }
- var p=v["preferance"].split(",")
- for(var i=0;i<p.length;i++){
-    if(document.getElementById("Red").value==p[i]){
-        document.getElementById("Red").checked=true;
-    }
-    if(document.getElementById("Green").value==p[i]){
-        document.getElementById("Green").checked=true;
-    }
-    if(document.getElementById("Blue").value==p[i]){
-        document.getElementById("Blue").checked=true;
-    }
-}
- 
-}
- }
-
-x.addEventListener("click", (e) => {
-    e.preventDefault()
-    var user = document.getElementById("user").value;
- 
-    var mobileNumber = document.getElementById("mobileNumber").value;
-    var male = document.getElementById("male").checked;
-    var female = document.getElementById("female").checked
-    // var female = document.getElementById("female").name;
-    var Add_ress = document.getElementById("add").value;
-    var zip_code = document.getElementById("ZipCode").value;
-    var emails = document.getElementById("emails").value;
-    var red = document.getElementById("Red").checked
-   var green = document.getElementById("Green").checked
-     var blue = document.getElementById("Blue").checked
-    var select = document.getElementById('c_ountry');
-    var text = select.options[select.selectedIndex].text;
-    console.log(Add_ress.length)
-
-
-    console.log(user, mobileNumber, Add_ress, zip_code, emails, male, red, text)
-
-
-    if (user === "" && mobileNumber === "" && Add_ress === "" && zip_code === "" && emails === "" && male === false && female === false && red  === false && green === false && blue === false && text === "Select Country") {
-        userName.innerHTML = " fill the username field";
-       
-
-        mobileNo.innerHTML =
-            "  fill the mobile Number field";
-            addressUser.innerHTML =
-            " Address Cannot be empty";
-            emailId.innerHTML =
-            "   fill the email id field";
-
-            genderCheck.innerHTML = " select at least one gender"
-
-        zipCodeCheck.innerHTML =
-            "  fill the Zipcode field"
-
-            preferanceCheck.innerHTML =
-          "   select atleast one preference"
-      //  document.getElementById("c_ountry").innerHTML =
-     //                " please select Country"    
-
-        return false;
-
-    }
-    else {
-        if (user == "") {
-            userName.innerHTML = "fill the username field";
-        }
-        else if(!/^[a-zA-Z]+$/.test(user)){
-            userName.innerHTML = "Only characters are allowed";
-        }
-    else{
-        userName.innerHTML = "";
-        }
-        if (mobileNumber == "") {
-            mobileNo.innerHTML =
-                "Please fill the mobile NUmber field";
-        }
-        else if (isNaN(mobileNumber)) {
-            mobileNo.innerHTML =
-                " Only numbers are allowed";
-        }
-        else if (mobileNumber.length != 10) {
-            mobileNo.innerHTML =
-                "  Mobile Number must be 10 digits only";
-        }
-        else {
-            mobileNo.innerHTML = "";
-        }
-
-        if (Add_ress == "") {
-            addressUser.innerHTML =
-                " Address Cannot be empty";
-        }
-        else if (Add_ress.length > 40) {
-            addressUser.innerHTML =
-                " only 40 characters are allowed";
-        }
-        else {
-            addressUser.innerHTML =
-                "";
-        }
-        if (zip_code == "") {
-            zipCodeCheck.innerHTML =
-                " Please fill the Zipcode field"
-        }
-        else if (isNaN(zip_code)) {
-           zipCodeCheck.innerHTML =
-                " Only numbers are allowed";
-        }
-
-        else if (zip_code.length != 6) {
-           zipCodeCheck.innerHTML =
-                "  Zip code must be 6 digits only";
-        }
-        else {
-            zipCodeCheck.innerHTML =
-                "";
-        }
-        if (emails == "") {
-            emailId.innerHTML =
-                "  Please fill the email id field"
-        }
-
-        else if (emails.includes("@") != true) {
-            emailId.innerHTML = "  Email must contain @";
-
-        }
-        else if (emails.charAt(emails.length - 4) != "." && emails.charAt(emails.length - 3) != ".") {
-            emailId.innerHTML = " Invalid Email";
-        }
-        else {
-            emailId.innerHTML =
-                "";
-        }
-
-        if (male == false && female == false) {
-            genderCheck.innerHTML = "select at least one gender"
-        }else if(male == true || female == true){
-            genderCheck.innerHTML = ""    
-        }
-       
-        if (red == false && green == false && blue == false) {
-            preferanceCheck.innerHTML =
-             " select atleast one preference"
-        }
-       // else if((red==true && green==true) || (red==true && blue==true) || (green==true && blue==true)){
-         //  preferanceCheck.innerHTML =""
-       
-       
-        else{
-            preferanceCheck.innerHTML =""
-        }
-
-    }
-   if (!(user == "" && mobileNumber == "" && Add_ress == "" && zip_code == "" && emails == "" && male == false && female == false && red == false && green == false && blue == false && text == "Select Country")) {
-        storeData();
-    }
-   })
-
-
-
-     
-</script>
 </html>

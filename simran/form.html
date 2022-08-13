@@ -34,9 +34,9 @@
         <tr>
           <td>Preference</td>
           <td>
-            <input type="checkbox" id="red" name="preference" value="red" onclick="checkboxvalidation()">Red
-            <input type="checkbox" id="green" name="preference" value="green" onclick="checkboxvalidation()">Green
-            <input type="checkbox" id="blue" name="preference" value="blue" onclick="checkboxvalidation()">Blue
+            <input type="checkbox" id="red" name="preference" value="red" >Red
+            <input type="checkbox" id="green" name="preference" value="green">Green
+            <input type="checkbox" id="blue" name="preference" value="blue" >Blue
             <span id="notValid" style="color: RED;"></span>
           </td>
         </tr>
@@ -274,34 +274,39 @@
         return c;
       }
 
-      function checkboxvalidation() {
-        var a = document.getElementsByName("preference");
-        var newvar = 0;
-        for (count = 0; count < a.length; count++) {
-          if (a[count].checked == true) {
-            newvar = newvar + 1;
+      // function checkboxvalidation() {
+      //   var a = document.getElementsByName("preference");
+      //   var newvar = 0;
+      //   for (count = 0; count < a.length; count++) {
+      //     if (a[count].checked == true) {
+      //       newvar = newvar + 1;
 
-          }
-        }
-        if (newvar > 1) {
-          document.getElementById('notValid').innerHTML = "Please select one";
-          return false;
-        }
+      //     }
+      //   }
+      //   if (newvar > 1) {
+      //     document.getElementById('notValid').innerHTML = "Please select one";
+      //     return false;
+      //   }
 
-        if (newvar <= 1) {
-          document.getElementById('notValid').innerHTML = "";
-          return false;
-        }
-      }
+      //   if (newvar <= 1) {
+      //     document.getElementById('notValid').innerHTML = "";
+      //     return false;
+      //   }
+      // }
 
       function storeData() {
 
         var fname = document.getElementById("name").value;
         var ggender = document.querySelector('input[name="gender"]:checked').value;
         var nno = document.getElementById("no").value;
-        var pred = document.getElementById("red").value;
-        var pgreen = document.getElementById("green").value;
-        var pblue = document.getElementById("blue").value;
+        var pref=document.querySelectorAll('input[type="checkbox"]:checked');
+        var ppref="";
+        for(var ref of pref){
+          ppref+=ref.value+",";
+        }
+        // var pred = document.getElementById("red").value;
+        // var pgreen = document.getElementById("green").value;
+        // var pblue = document.getElementById("blue").value;
         var aadd = document.getElementById("address").value;
         var zzip = document.getElementById("zip").value;
         var ccountry = document.getElementById("country").value;
@@ -311,9 +316,10 @@
           name: fname,
           gender: ggender,
           phone_no: nno,
-          preferanceRed: pred,
-          preferanceGreen: pgreen,
-          preferanceBlue: pblue,
+          preference:ppref,
+          // preferanceRed: pred,
+          // preferanceGreen: pgreen,
+          // preferanceBlue: pblue,
           address: aadd,
           zipcode: zzip,
           country: ccountry,

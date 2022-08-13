@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 5% auto;
+    padding: 5% 5%;
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+
+.formContent {
+    display: flex;
+    align-items: center;
+}
+
+.formContent label {
+
+    font-size: 1.5rem;
+    float: left;
+    width: 30%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.formContent input,
+textarea,
+select {
+    font-size: large;
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    width: 40%;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    float: right;
+    width: 2%;
+}
+
+label.notFar {
+    width:8%;
+    float:left;
+    text-align: left;
+    margin: 0 2px;
+}
+
+.controllers{
+    float: right;
+    width: 57%;
+}
+
+.controllers>input,
+button {
+    cursor: pointer;
+    margin: 0 2%;
+    justify-content: center;
+
+    font-size: large;
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
