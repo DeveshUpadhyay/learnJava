@@ -261,6 +261,7 @@
         </tr>
         <td><button type="submit" name="submit" onclick="storeData()" value="Submit">Submit</button></td>
         <td><button type="reset" value="Reset">Reset</button></td>
+        <td><button  name="retriveData" onclick="retriveData()" value="retriveData">Retrive</button></td>
       </table>
     </form>
     <script type="text/javascript">
@@ -307,7 +308,7 @@
         // var pred = document.getElementById("red").value;
         // var pgreen = document.getElementById("green").value;
         // var pblue = document.getElementById("blue").value;
-        var aadd = document.getElementById("address").value;
+        var aadd = document.getElementById("address").value;x
         var zzip = document.getElementById("zip").value;
         var ccountry = document.getElementById("country").value;
         var eemail = document.getElementById("email").value;
@@ -330,6 +331,13 @@
         console.log(localStorage.getItem('formData'));
       }
 
+      function retriveData(){
+        var data=JSON.parse(localStorage.getItem('formData'));
+        var ppref=data.preference.split(",");
+        for(var i=0; i<ppref.length-1;i++){
+          document.getElementById(ppref[i]).checked=true;
+        }
+      }
 
     </script>
 </body>
