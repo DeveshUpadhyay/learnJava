@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="assignment2.css">
+    <script src="fetchDataFromFile.js"></script>
+</head>
+
+<body>
+
+    <div class="headerEle">
+        <h1>Assignment 2</h1>
+        <p>Fetching Data from JSON File and displaying in table</p>
+    </div>
+
+    <div id="tables">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Standard</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+    </div>  
+    <div class="pagination">
+
+        <button id="1" onclick="getData(0)">1</button>
+        <button id="2" onclick="getData(10)">2</button>
+        <button id="3" onclick="getData(20)">3</button>
+        <button id="4" onclick="getData(30)">4</button>
+        <button id="5" onclick="getData(40)">5</button>
+        <button id="6" onclick="getData(50)">6</button>
+        <button id="7" onclick="getData(60)">7</button>
+        <button id="8" onclick="getData(70)">8</button>
+        <button id="9" onclick="getData(80)">9</button>
+        <button id="10" onclick="getData(90)">10</button>
+    </div>
+
+</body>
+
+</html>
