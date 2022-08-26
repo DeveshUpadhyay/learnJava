@@ -11,42 +11,77 @@
 </head>
 
 <body>
+    <!-- <body onload="init()"> -->
 
     <div class="headerEle">
         <h1>Assignment 2</h1>
         <p>Fetching Data from JSON File and displaying in table</p>
     </div>
-
+    
+    <div id="noOfEntries">
+        <label>
+            Show
+            <select id="EntriesLength" aria-controls="table">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                
+            </select>
+            Entries
+        </label>
+    </div>
     <div id="tables">
         <table id="table">
             <thead>
                 <tr>
-                    <th>Sr No</th>
-                    <th>Roll No</th>
-                    <th>Name</th>
-                    <th>Standard</th>
+                    <th id="srno">Sr No</th>
+                    <th id="rollno">Roll No</th>
+                    <th id="name">Name</th>
+                    <th id="standard">Standard</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
-
+                
             </tbody>
+            <tfoot id="tfoot">
+                    <td >
+                        No Entries to Show.
+                    </td>
 
+            </tfoot>
         </table>
+        <!-- <div id="tfoot">
+
+        </div> -->
     </div>  
-    <div class="pagination">
+    <!-- <div class="pagination">
 
         <button id="1" onclick="getHttpdata(0)">1</button>
-        <button id="2" onclick="getHttpdata(10)">2</button>
-        <button id="3" onclick="getHttpdata(20)">3</button>
-        <button id="4" onclick="getHttpdata(30)">4</button>
-        <button id="5" onclick="getHttpdata(40)">5</button>
-        <button id="6" onclick="getHttpdata(50)">6</button>
-        <button id="7" onclick="getHttpdata(60)">7</button>
-        <button id="8" onclick="getHttpdata(70)">8</button>
-        <button id="9" onclick="getHttpdata(80)">9</button>
-        <button id="10" onclick="getHttpdata(90)">10</button>
-    </div>
+        <button id="2" onclick="getHttpdata(1)">2</button>
+        <button id="3" onclick="getHttpdata(2)">3</button>
+        <button id="4" onclick="getHttpdata(3)">4</button>
+        <button id="5" onclick="getHttpdata(4)">5</button>
+        <button id="6" onclick="getHttpdata(5)">6</button>
+        <button id="7" onclick="getHttpdata(6)">7</button>
+        <button id="8" onclick="getHttpdata(7)">8</button>
+        <button id="9" onclick="getHttpdata(8)">9</button>
+        <button id="10" onclick="getHttpdata(9)">10</button>
+    </div> -->
+    
+    <div class="pagination">
 
+        <button id="prev" >Prev</button>
+        <div id="buttonContainer">
+            <div id="dynamic-buttons">
+    
+            </div>
+        </div>
+        <button id="next" >Next</button>
+    </div>
+    
 </body>
+<!-- <script src="fetchDataFromFile.js"></script> -->
 
 </html>
