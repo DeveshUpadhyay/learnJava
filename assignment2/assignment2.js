@@ -1,7 +1,7 @@
 var currentPage = 0;
 var fetchedData;
 var maxPages;
-
+var increment=10;
 window.onload = function () {
     //Loading Data into the local memory.
     loadData();
@@ -10,9 +10,7 @@ window.onload = function () {
     // adding listners(Individual Functionalities) to buttons
     const prevButton = document.getElementById("prev");
     const nextButton = document.getElementById("next");
-    const entriesCount = document.getElementById("EntriesLength");
 
-    entriesCount.addEventListener("change", incrementValueChanged);
     prevButton.addEventListener("click", prevButtonWorking);
     nextButton.addEventListener("click", nextButtonWorking);
 
@@ -29,8 +27,6 @@ async function loadData() {
             fetchedData = await this.responseText;
             fetchedData = JSON.parse(fetchedData).Students;
 
-
-            var increment = document.getElementById("EntriesLength").value;
             let tlength = fetchedData.length;
             maxPages = Math.ceil(tlength / increment);
 
@@ -46,21 +42,6 @@ async function loadData() {
     }
     rinitHttp.open("GET", "data.json", true);
     rinitHttp.send();
-}
-
-// Managing Table entry size
-function incrementValueChanged() {
-    console.log("MaxPages Updated")
-    var increment = document.getElementById("EntriesLength").value;
-    let tlength = fetchedData.length;
-    maxPages = Math.ceil(tlength / increment);
-
-    if (currentPage >= maxPages) {
-        currentPage = maxPages - 1;
-    }
-
-    createDynamicButtons();
-    createDynamicTable(currentPage, fetchedData);
 }
 
 //Creating Dynamic Pagination Buttons
@@ -118,7 +99,6 @@ function nextButtonWorking() {
 
 //Creating table Dynamically as per the pagination
 function createDynamicTable(currentPage, data) {
-    var increment = document.getElementById("EntriesLength").value;
 
     document.getElementById("tableBody").remove();
 
